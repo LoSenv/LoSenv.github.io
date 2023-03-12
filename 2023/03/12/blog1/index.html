@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>blog1 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、搭建流程整体概述 整个搭建流程可分为三大步：搭建域控并配置域账号、 创建故障转移集群、配置数据库AlwaysOn，这三大步又可细分为十小步，详情如下。 使用本地管理员搭建域控制器创建域管理员账号并将其添加到集群中各节点的本地管理员群组中使用本地管理员在集群中各节点上安装故障转移集群功能使用域账号在集群中某节点上搭建故障转移集群根据集群中节点数量判断是否需要添加共享文件夹使用本地管理员在集群中各">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog1">
+<meta property="og:url" content="http://example.com/2023/03/12/blog1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、搭建流程整体概述 整个搭建流程可分为三大步：搭建域控并配置域账号、 创建故障转移集群、配置数据库AlwaysOn，这三大步又可细分为十小步，详情如下。 使用本地管理员搭建域控制器创建域管理员账号并将其添加到集群中各节点的本地管理员群组中使用本地管理员在集群中各节点上安装故障转移集群功能使用域账号在集群中某节点上搭建故障转移集群根据集群中节点数量判断是否需要添加共享文件夹使用本地管理员在集群中各">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-03-12T13:44:44.000Z">
+<meta property="article:modified_time" content="2023-03-12T15:37:51.815Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-blog1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/03/12/blog1/" class="article-date">
+  <time datetime="2023-03-12T13:44:44.000Z" itemprop="datePublished">2023-03-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      blog1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、搭建流程整体概述</p>
+<p>整个搭建流程可分为三大步：搭建域控并配置域账号、 创建故障转移集群、配置数据库AlwaysOn，这三大步又可细分为十小步，详情如下。</p>
+<p>使用本地管理员搭建域控制器<br>创建域管理员账号并将其添加到集群中各节点的本地管理员群组中<br>使用本地管理员在集群中各节点上安装故障转移集群功能<br>使用域账号在集群中某节点上搭建故障转移集群<br>根据集群中节点数量判断是否需要添加共享文件夹<br>使用本地管理员在集群中各节点上安装SqlServer<br>使用域账号在集群中各节点上启用AlwaysOn<br>使用域账号在集群中某节点上创建可用性组<br>使用域账号在可用性组主副本上创建侦听器<br>使用侦听器地址或侦听器IP登录SqlServer操作数据库<br>二、 搭建域控</p>
+<p>1、配置域控ip，去掉<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ipv6&spm=1001.2101.3001.7020">ipv6</a>，为了连接<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%A4%96%E7%BD%91&spm=1001.2101.3001.7020">外网</a>首选<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=DNS%E6%9C%8D%E5%8A%A1%E5%99%A8&spm=1001.2101.3001.7020">DNS服务器</a>填写：114.114.114.114</p>
+<p>2、安装域控（安装AD域服务的同时，操作系统会同时安装好DNS服务器）</p>
+<p>3、安装成功后，将服务器提升为域控制器</p>
+<p> 4、 添加新林</p>
+<p>5、设置DSRM密码，默认林中第一棵域树的根域的域控制器必须担当全局编录服务器且必须安装DNS服务，不能是只读域控制器</p>
+<p>6、 跳过设置DNS委派</p>
+<p>7、 保持NetBIOS的默认域名、默认存储路径，并开始安装</p>
+<p>8、安装完AD DS之后会自动重启服务器，重启服务器之后打开DNS管理器</p>
+<p>9、 确认linkcom已开启动态更新	</p>
+<p>10、确认_tcp安装成功</p>
+<p>11、 检查AD服务、Netlogon服务是否启动</p>
+<p>12、 在Users中新建域管理员账号DCAdmin</p>
+<p>13、关闭Windows自动更新</p>
+<p>三、 把集群的规划节点加域并将域管理员设为本地管理员</p>
+<p>1、设置节点IP</p>
+<p>2、检查本机是否能连通域控服务器</p>
+<p>3、 把本机添加到域控中，并在重启后用本地管理员账户登录进行确认</p>
+<p>4、将DCAdmin添加到本地管理员组</p>
+<p>5、关闭Windows自动更新</p>
+<p>四、 集群的其他规划节点也进行上述操作 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/03/12/blog1/" data-id="clf5k8bgi0000t4bccact8gpm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/02/28/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">准备环境</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/03/12/blog1/">blog1</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/28/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/">准备环境</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/26/%E7%BB%BC%E8%BF%B0/">综述</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
