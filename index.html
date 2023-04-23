@@ -64,6 +64,226 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-blog3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/05/blog3/" class="article-date">
+  <time datetime="2023-04-05T12:45:24.000Z" itemprop="datePublished">2023-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/05/blog3/">blog3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、以本地管理员账号安装-Net-FrameworkSqlServer"><a href="#一、以本地管理员账号安装-Net-FrameworkSqlServer" class="headerlink" title="一、以本地管理员账号安装.Net FrameworkSqlServer"></a>一、以本地管理员账号安装.Net FrameworkSqlServer</h2><p>1、安装.Net Framework3.5</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699043619-3.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699053670-6.png" alt="img"></p>
+<h2 id="二、以本地管理员账号安装SqlServer2016（部分主要步骤）"><a href="#二、以本地管理员账号安装SqlServer2016（部分主要步骤）" class="headerlink" title="二、以本地管理员账号安装SqlServer2016（部分主要步骤）"></a>二、以本地管理员账号安装SqlServer2016（部分主要步骤）</h2><p>1、独立安装（非故障转移集群安装）</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699059515-9.png" alt="img"></p>
+<p>2、 服务器配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699069252-12.png" alt="img"></p>
+<p>3、数据库引擎配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699076869-15.png" alt="img"></p>
+<p>4、AnalysisServices配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699082624-18.png" alt="img"></p>
+<p>5、记录配置文件路径、安装成功</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699089033-21.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699095936-24.png" alt="img"></p>
+<p>6、安装成功后切换域账号重新登录系统</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699101209-27.png" alt="img"></p>
+<p>7、集群中的其他节点也要完成上述操作，并切换域账号重新登陆</p>
+<h2 id="三、修改SQL服务的启动账户并启动AlwaysOn可用性组"><a href="#三、修改SQL服务的启动账户并启动AlwaysOn可用性组" class="headerlink" title="三、修改SQL服务的启动账户并启动AlwaysOn可用性组"></a>三、修改SQL服务的启动账户并启动AlwaysOn可用性组</h2><p>1、将SQL代理的启动账户修改为域用户DCADMIN</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699108511-30.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699115667-33.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699121614-36.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699127610-39.png" alt="img"></p>
+<p>2、 将SQL引擎服务的启动账户修改为域用户DCAdmin</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699133057-42.png" alt="img"></p>
+<p>3、打开SQLServer配置管理器启用AlwaysOn可用性组并重启服务</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699144323-45.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699150951-48.png" alt="img"></p>
+<p>4、 AlwaysOn可用性组启用前后对比	</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699156010-51.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699165816-54.png" alt="img"></p>
+<p>5、使用DCAdmin登录SqlServer Management Studio</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699171147-57.png" alt="img"></p>
+<p>6、在一个集群节点的SQLServer中查看集群的成员</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699178260-60.png" alt="img"></p>
+<p>7、在一个集群节点的SQLServer中查看各节点的投票数</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699182846-63.png" alt="img"></p>
+<p>8、 对集群中各节点的SqlServer还原数据库</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699187711-66.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699194576-69.png" alt="img"></p>
+<h2 id="四、创建可用性组"><a href="#四、创建可用性组" class="headerlink" title="四、创建可用性组"></a>四、创建可用性组</h2><p>1、开始创建</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699201155-72.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699246689-83.png" alt="img"></p>
+<p>2、指定可用性组名称</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699251412-86.png" alt="img"></p>
+<p>3、 选择数据库</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699256977-89.png" alt="img"></p>
+<p>4、 把集群中的其他节点添加到高可用组中并设置副本类型</p>
+<p>&#x2F;&#x2F;无法添加另一台服务器的辅助副本</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/05/blog3/" data-id="clgtehues0000hwbchnwodggw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-blog2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/05/blog2/" class="article-date">
+  <time datetime="2023-04-05T12:31:57.000Z" itemprop="datePublished">2023-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/04/05/blog2/">blog2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、安装故障转移集群功能"><a href="#一、安装故障转移集群功能" class="headerlink" title="一、安装故障转移集群功能"></a>一、安装故障转移集群功能</h2><p>1、以本地管理员账户登陆后安装故障转移集群功能</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<hr>
+<p>遇到的问题</p>
+<p><strong>[虚拟机]Windows server 2019 出现无法安装 .NET Framework 3.5</strong></p>
+<p>解决办法如下：</p>
+<p>*<strong>第一步、先下载.NET Framework 3.5功能的源文件，也就是sxs文件夹</strong></p>
+<p>下载地址：链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1hGWptmcEalvLDyIGPrHc-w?pwd=ek7q">https://pan.baidu.com/s/1hGWptmcEalvLDyIGPrHc-w?pwd=ek7q</a><br>提取码：ek7q</p>
+<p>下载后解压放到指定盘目录下，例如我的放在D盘</p>
+<p><img src="/bd5ab4e3a69b4d4caeb47a89a7dced80.png" alt="img"></p>
+<p><strong>第二步、安装.NET Framework 3.5功能，步骤如图：</strong></p>
+<p>1.点击开始，找到服务器管理器并打开</p>
+<p><img src="/edef33669a24d8a972ed8846cec789e8.png" alt="img"></p>
+<p>2.添加角色和功能</p>
+<p><img src="/721d120d7325e7ffb95cf90d6ba9d683.png" alt="img"></p>
+<p>3.下一步</p>
+<p><img src="/d0f064b3a4e6ae5263c6cfc7eb245c1c.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/598bebc5f635f9c1f8d6a64870f3de48.png" alt="img"></p>
+<p><img src="/660caa093d94e752b0323088a0f4dc87.png" alt="img"></p>
+<p>此处不要勾选任何角色，继续下一步</p>
+<p><img src="/2fd29f3214e3e5282b1c0790a4649625.png" alt="img"></p>
+<p><img src="/2fd29f3214e3e5282b1c0790a4649625-1682253662252-19.png" alt="img"></p>
+<p><img src="/ee32d748d087e87259339fde89dbfba9.png" alt="img"></p>
+<p>此时不要着急点击【安装】，点击指定备用源路径 打开指定备用源路径</p>
+<p><img src="/fe6901df77fe98f8b229f4b4c5478435.png" alt="img"></p>
+<p>点击安装后，等待安装完成即可！</p>
+<hr>
+<p>2、 安装成功后切换域账号重新登陆</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698346132-3.png" alt="img"></p>
+<h2 id="二、验证配置"><a href="#二、验证配置" class="headerlink" title="二、验证配置"></a>二、验证配置</h2><p>1、打开故障转移集群管理器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698353322-6.png" alt="img"></p>
+<p>2、验证配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698359777-9.png" alt="img"></p>
+<p>3、开始之前</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698366158-12.png" alt="img"></p>
+<p>4、选择集群或服务器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698371773-15.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698401690-18.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698412332-21.png" alt="img"></p>
+<p>5、选择测试选项并确认</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698419423-24.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698429199-27.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698434598-30.png" alt="img"></p>
+<p>6、查看验证结果</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698439357-33.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698448427-36.png" alt="img"></p>
+<h2 id="三、创建集群"><a href="#三、创建集群" class="headerlink" title="三、创建集群"></a>三、创建集群</h2><p>1、开始创建集群</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698453955-39.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698469690-42.png" alt="img"></p>
+<p>2、 选择服务器（我们之前进行了验证配置操作，验证通过后，之前选择了哪些服务器此处依旧选择那些服务器即可）</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698475047-45.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698480331-48.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698486390-51.png" alt="img"></p>
+<p>3、设置集群名称、管理IP并确认（管理IP是能连通的闲置IP,不是服务器）</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698493602-54.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698500598-57.png" alt="img"></p>
+<p>4、正式创建集群</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698506426-60.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698512664-63.png" alt="img"></p>
+<p>5、查看集群信息</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698518743-66.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698529156-69.png" alt="img"></p>
+<p>6、查看域控中的Computers信息</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698538655-72.png" alt="img"></p>
+<h2 id="四、故障转移集群的仲裁配置介绍"><a href="#四、故障转移集群的仲裁配置介绍" class="headerlink" title="四、故障转移集群的仲裁配置介绍"></a>四、故障转移集群的仲裁配置介绍</h2><p>1、多数节点</p>
+<p>这种配置不会用到仲裁磁盘，而所谓多数节点就是在正常节点数量占多数的情况下，集群才会提供服务，否则就停止服务。这种配置适用于奇数节点的集群，例如5个节点的集群，其正常节点数量必须至少3个，集群才会提供服务。</p>
+<p>2、多数节点和磁盘</p>
+<p>适用于偶数节点的集群，他在计算法定数量时会将仲裁磁盘计算进来，例如，4个节点+1个仲裁磁盘节点的集群，可以将其视为5个节点的集群，这时正常节点数量必须至少3个，集群才会提供服务。</p>
+<p>3、多数节点和文件共享</p>
+<p>它跟（多数节点和磁盘）类似，不过仲裁磁盘改为共享文件夹内的文件。 </p>
+<p>4、没有多数</p>
+<p>只有磁盘，只要仲裁磁盘脱机，集群就会停止提供服务。（不建议使用，这种方式很早之前已经有了）</p>
+<p>5、见证磁盘和见证共享文件夹的区别</p>
+<p>见证共享文件夹是Windows 2008才推出的见证磁盘方式，因为以前的见证磁盘（简称仲裁盘）需要共享存储，也就是各个节点需要挂载同一个磁盘，这个磁盘叫见证磁盘，是放在共享存储上面的。推出见证共享文件夹之后我们可以不需要高大上的共享存储，用共享文件夹即可。</p>
+<p> 6、小结</p>
+<ul>
+<li>我们在使用故障转移集群的时候，只用两种仲裁配置：（多数节点） 和 （多数节点和文件共享）。</li>
+<li>如果集群节点是奇数，那么使用多数节点</li>
+<li>如果集群节点是偶数，那么使用多数节点和文件共享 （需要配置一个共享文件夹，各个节点都能访问这个共享文件夹，并且共享文件夹所在机器不需要加入域）</li>
+<li>域控不需要安装故障转移集群服务和SQL Server，也不需要加入到故障转移集群</li>
+<li>所有机器防火墙都关掉</li>
+<li>两个节点都需要安装相同的更新程序，建议不要开启自动更新功能，由系统管理员手动更新</li>
+</ul>
+<h2 id="五、配置集群仲裁"><a href="#五、配置集群仲裁" class="headerlink" title="五、配置集群仲裁"></a>五、配置集群仲裁</h2><p>1、因为我们的集群中只有2个节点所以需要创建一个共享文件夹，本例中我们将其放在域控服务器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698549990-75.png" alt="img"></p>
+<p>2、配置集群仲裁设置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698668969-100.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698675260-103.png" alt="img"></p>
+<p>3、选择仲裁配置选项</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698663586-97.png" alt="img"></p>
+<p>4、选择仲裁见证方式</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698656818-94.png" alt="img"></p>
+<p>5、 配置文件共享见证</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698651442-91.png" alt="img"></p>
+<p>6、确认配置完成</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698638750-85.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698644422-88.png" alt="img"></p>
+<p>7、查看集群的见证方式和核心资源</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680698630945-82.png" alt="img"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/05/blog2/" data-id="clgtehueu0001hwbcaepsb58z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blog1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/03/12/blog1/" class="article-date">
@@ -86,28 +306,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一、搭建流程整体概述</p>
-<p>整个搭建流程可分为三大步：搭建域控并配置域账号、 创建故障转移集群、配置数据库AlwaysOn，这三大步又可细分为十小步，详情如下。</p>
-<p>使用本地管理员搭建域控制器<br>创建域管理员账号并将其添加到集群中各节点的本地管理员群组中<br>使用本地管理员在集群中各节点上安装故障转移集群功能<br>使用域账号在集群中某节点上搭建故障转移集群<br>根据集群中节点数量判断是否需要添加共享文件夹<br>使用本地管理员在集群中各节点上安装SqlServer<br>使用域账号在集群中各节点上启用AlwaysOn<br>使用域账号在集群中某节点上创建可用性组<br>使用域账号在可用性组主副本上创建侦听器<br>使用侦听器地址或侦听器IP登录SqlServer操作数据库<br>二、 搭建域控</p>
-<p>1、配置域控ip，去掉<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ipv6&spm=1001.2101.3001.7020">ipv6</a>，为了连接<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%A4%96%E7%BD%91&spm=1001.2101.3001.7020">外网</a>首选<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=DNS%E6%9C%8D%E5%8A%A1%E5%99%A8&spm=1001.2101.3001.7020">DNS服务器</a>填写：114.114.114.114</p>
+        <h2 id="一、搭建流程整体概述"><a href="#一、搭建流程整体概述" class="headerlink" title="一、搭建流程整体概述"></a>一、搭建流程整体概述</h2><p>整个搭建流程可分为三大步：搭建域控并配置域账号、 创建故障转移集群、配置数据库AlwaysOn，这三大步又可细分为十小步，详情如下。</p>
+<p>使用本地管理员搭建域控制器<br>创建域管理员账号并将其添加到集群中各节点的本地管理员群组中<br>使用本地管理员在集群中各节点上安装故障转移集群功能<br>使用域账号在集群中某节点上搭建故障转移集群<br>根据集群中节点数量判断是否需要添加共享文件夹<br>使用本地管理员在集群中各节点上安装SqlServer<br>使用域账号在集群中各节点上启用AlwaysOn<br>使用域账号在集群中某节点上创建可用性组<br>使用域账号在可用性组主副本上创建侦听器<br>使用侦听器地址或侦听器IP登录SqlServer操作数据库</p>
+<h2 id="二、搭建域控"><a href="#二、搭建域控" class="headerlink" title="二、搭建域控"></a>二、搭建域控</h2><p>1、配置域控ip，去掉ipv6，为了连接外网首选DNS服务器填写：114.114.114.114</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
 <p>2、安装域控（安装AD域服务的同时，操作系统会同时安装好DNS服务器）</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699404337-3.png" alt="img"></p>
 <p>3、安装成功后，将服务器提升为域控制器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699408931-6.png" alt="img"></p>
 <p> 4、 添加新林</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699413391-9.png" alt="img"></p>
 <p>5、设置DSRM密码，默认林中第一棵域树的根域的域控制器必须担当全局编录服务器且必须安装DNS服务，不能是只读域控制器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699418664-12.png" alt="img"></p>
 <p>6、 跳过设置DNS委派</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699423954-15.png" alt="img"></p>
 <p>7、 保持NetBIOS的默认域名、默认存储路径，并开始安装</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699429445-18.png" alt="img">、</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699441156-21.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699447532-24.png" alt="img"></p>
 <p>8、安装完AD DS之后会自动重启服务器，重启服务器之后打开DNS管理器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699452957-27.png" alt="img"></p>
 <p>9、 确认linkcom已开启动态更新	</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699464010-30.png" alt="img"></p>
 <p>10、确认_tcp安装成功</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699469467-33.png" alt="img"></p>
 <p>11、 检查AD服务、Netlogon服务是否启动</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699473709-36.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699482556-39.png" alt="img"></p>
 <p>12、 在Users中新建域管理员账号DCAdmin</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699487497-42.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699492828-45.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699497739-48.png" alt="img"></p>
 <p>13、关闭Windows自动更新</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699507176-51.png" alt="img"></p>
 <p>三、 把集群的规划节点加域并将域管理员设为本地管理员</p>
 <p>1、设置节点IP</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699511635-54.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699516908-57.png" alt="img"></p>
 <p>2、检查本机是否能连通域控服务器</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699524990-60.png" alt="img"></p>
 <p>3、 把本机添加到域控中，并在重启后用本地管理员账户登录进行确认</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699530180-63.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699537220-66.png" alt="img"></p>
 <p>4、将DCAdmin添加到本地管理员组</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699544255-69.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699550493-72.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699555684-75.png" alt="img"></p>
 <p>5、关闭Windows自动更新</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699560770-78.png" alt="img"></p>
 <p>四、 集群的其他规划节点也进行上述操作 </p>
 
       
@@ -250,7 +496,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
     </div>
   </div>
 
@@ -261,6 +507,14 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/04/05/blog3/">blog3</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/05/blog2/">blog2</a>
+          </li>
         
           <li>
             <a href="/2023/03/12/blog1/">blog1</a>

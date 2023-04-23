@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>blog3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、以本地管理员账号安装.Net FrameworkSqlServer1、安装.Net Framework3.5    二、以本地管理员账号安装SqlServer2016（部分主要步骤）1、独立安装（非故障转移集群安装）  2、 服务器配置  3、数据库引擎配置  4、AnalysisServices配置  5、记录配置文件路径、安装成功   6、安装成功后切换域账号重新登录系统  7、集群中的其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="blog3">
+<meta property="og:url" content="http://example.com/2023/04/05/blog3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、以本地管理员账号安装.Net FrameworkSqlServer1、安装.Net Framework3.5    二、以本地管理员账号安装SqlServer2016（部分主要步骤）1、独立安装（非故障转移集群安装）  2、 服务器配置  3、数据库引擎配置  4、AnalysisServices配置  5、记录配置文件路径、安装成功   6、安装成功后切换域账号重新登录系统  7、集群中的其">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699043619-3.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699053670-6.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699059515-9.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699069252-12.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699076869-15.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699082624-18.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699089033-21.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699095936-24.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699101209-27.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699108511-30.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699115667-33.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699121614-36.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699127610-39.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699133057-42.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699144323-45.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699150951-48.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699156010-51.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699165816-54.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699171147-57.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699178260-60.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699182846-63.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699187711-66.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699194576-69.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699201155-72.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699246689-83.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699251412-86.png">
+<meta property="og:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699256977-89.png">
+<meta property="article:published_time" content="2023-04-05T12:45:24.000Z">
+<meta property="article:modified_time" content="2023-04-05T12:54:21.833Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-blog3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/04/05/blog3/" class="article-date">
+  <time datetime="2023-04-05T12:45:24.000Z" itemprop="datePublished">2023-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      blog3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、以本地管理员账号安装-Net-FrameworkSqlServer"><a href="#一、以本地管理员账号安装-Net-FrameworkSqlServer" class="headerlink" title="一、以本地管理员账号安装.Net FrameworkSqlServer"></a>一、以本地管理员账号安装.Net FrameworkSqlServer</h2><p>1、安装.Net Framework3.5</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699043619-3.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699053670-6.png" alt="img"></p>
+<h2 id="二、以本地管理员账号安装SqlServer2016（部分主要步骤）"><a href="#二、以本地管理员账号安装SqlServer2016（部分主要步骤）" class="headerlink" title="二、以本地管理员账号安装SqlServer2016（部分主要步骤）"></a>二、以本地管理员账号安装SqlServer2016（部分主要步骤）</h2><p>1、独立安装（非故障转移集群安装）</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699059515-9.png" alt="img"></p>
+<p>2、 服务器配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699069252-12.png" alt="img"></p>
+<p>3、数据库引擎配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699076869-15.png" alt="img"></p>
+<p>4、AnalysisServices配置</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699082624-18.png" alt="img"></p>
+<p>5、记录配置文件路径、安装成功</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699089033-21.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699095936-24.png" alt="img"></p>
+<p>6、安装成功后切换域账号重新登录系统</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699101209-27.png" alt="img"></p>
+<p>7、集群中的其他节点也要完成上述操作，并切换域账号重新登陆</p>
+<h2 id="三、修改SQL服务的启动账户并启动AlwaysOn可用性组"><a href="#三、修改SQL服务的启动账户并启动AlwaysOn可用性组" class="headerlink" title="三、修改SQL服务的启动账户并启动AlwaysOn可用性组"></a>三、修改SQL服务的启动账户并启动AlwaysOn可用性组</h2><p>1、将SQL代理的启动账户修改为域用户DCADMIN</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699108511-30.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699115667-33.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699121614-36.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699127610-39.png" alt="img"></p>
+<p>2、 将SQL引擎服务的启动账户修改为域用户DCAdmin</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699133057-42.png" alt="img"></p>
+<p>3、打开SQLServer配置管理器启用AlwaysOn可用性组并重启服务</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699144323-45.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699150951-48.png" alt="img"></p>
+<p>4、 AlwaysOn可用性组启用前后对比	</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699156010-51.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699165816-54.png" alt="img"></p>
+<p>5、使用DCAdmin登录SqlServer Management Studio</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699171147-57.png" alt="img"></p>
+<p>6、在一个集群节点的SQLServer中查看集群的成员</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699178260-60.png" alt="img"></p>
+<p>7、在一个集群节点的SQLServer中查看各节点的投票数</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699182846-63.png" alt="img"></p>
+<p>8、 对集群中各节点的SqlServer还原数据库</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699187711-66.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699194576-69.png" alt="img"></p>
+<h2 id="四、创建可用性组"><a href="#四、创建可用性组" class="headerlink" title="四、创建可用性组"></a>四、创建可用性组</h2><p>1、开始创建</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699201155-72.png" alt="img"></p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699246689-83.png" alt="img"></p>
+<p>2、指定可用性组名称</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699251412-86.png" alt="img"></p>
+<p>3、 选择数据库</p>
+<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699256977-89.png" alt="img"></p>
+<p>4、 把集群中的其他节点添加到高可用组中并设置副本类型</p>
+<p>&#x2F;&#x2F;无法添加另一台服务器的辅助副本</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/05/blog3/" data-id="clgtehues0000hwbchnwodggw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/05/blog2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">blog2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/05/blog3/">blog3</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/05/blog2/">blog2</a>
+          </li>
+        
+          <li>
+            <a href="/2023/03/12/blog1/">blog1</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/28/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/">准备环境</a>
+          </li>
+        
+          <li>
+            <a href="/2023/02/26/%E7%BB%BC%E8%BF%B0/">综述</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2023 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
