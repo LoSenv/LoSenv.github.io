@@ -64,6 +64,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-blog4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2023/05/07/blog4/" class="article-date">
+  <time datetime="2023-05-07T10:49:41.000Z" itemprop="datePublished">2023-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2023/05/07/blog4/">blog4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SQL server服务器名称、实例名称 无法连接ServerName、Instance Name</p>
+<p>解决步骤：</p>
+<blockquote>
+<p>1： Sql Server是否已经启动.</p>
+<p>2： 检查Sql Server服务器是否开启TCP&#x2F;IP协议. 侦听的默认端口为1433</p>
+<p>3:   ping 数据库服务器. 看网络是否可通</p>
+<p>4:   Telnet 服务器IP 1433, 检查是否防火墙原因导致端口不通</p>
+<p>5： 服务器是否允许远程连接</p>
+<p>6： 如果IP 可以ping通,但是机器名ping不通, 那么需要改host 文件 </p>
+<p>7：如果采用IP+端口连接数据库,那么此时已经可以连接上了. 但是使用 服务器名称\实例名称,Server Name\Instance Name 来连接的话还需要多检查以下操作:</p>
+<p> a:  <strong>服务器与客户端是否开启了 Sql Server Browser 服务</strong></p>
+<p>b:  <strong>防火墙修改： 允许 1434端口 使用 UDP协议 通过防火墙(Sql Server Browser 服务 使用的是 UDP 协议以及默认1434端口)</strong></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/05/07/blog4/" data-id="clhdaoork0000vobc0xyv251g" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-blog3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2023/04/05/blog3/" class="article-date">
@@ -496,7 +545,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/02/">February 2023</a></li></ul>
     </div>
   </div>
 
@@ -507,6 +556,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/05/07/blog4/">blog4</a>
+          </li>
         
           <li>
             <a href="/2023/04/05/blog3/">blog3</a>
@@ -522,10 +575,6 @@
         
           <li>
             <a href="/2023/02/28/%E5%87%86%E5%A4%87%E7%8E%AF%E5%A2%83/">准备环境</a>
-          </li>
-        
-          <li>
-            <a href="/2023/02/26/%E7%BB%BC%E8%BF%B0/">综述</a>
           </li>
         
       </ul>
