@@ -360,13 +360,13 @@
 <h2 id="二、搭建域控"><a href="#二、搭建域控" class="headerlink" title="二、搭建域控"></a>二、搭建域控</h2><p>1、配置域控ip，去掉ipv6，为了连接外网首选DNS服务器填写：114.114.114.114</p>
 <p><img src="/1.png" alt="1"></p>
 <p>2、安装域控（安装AD域服务的同时，操作系统会同时安装好DNS服务器）</p>
-<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699404337-3.png" alt="img"></p>
+<p><img src="/2.png" alt="2"></p>
 <p>3、安装成功后，将服务器提升为域控制器</p>
-<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699408931-6.png" alt="img"></p>
+<p><img src="/3.png" alt="3"></p>
 <p> 4、 添加新林</p>
-<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699413391-9.png" alt="img"></p>
+<p><img src="/4.png" alt="4"></p>
 <p>5、设置DSRM密码，默认林中第一棵域树的根域的域控制器必须担当全局编录服务器且必须安装DNS服务，不能是只读域控制器</p>
-<p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699418664-12.png" alt="img"></p>
+<p><img src="/5.png" alt="5"></p>
 <p>6、 跳过设置DNS委派</p>
 <p><img src="/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1680699423954-15.png" alt="img"></p>
 <p>7、 保持NetBIOS的默认域名、默认存储路径，并开始安装</p>
