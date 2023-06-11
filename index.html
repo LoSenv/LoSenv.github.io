@@ -99,6 +99,43 @@
 <p> a:  <strong>服务器与客户端是否开启了 Sql Server Browser 服务</strong></p>
 <p>b:  <strong>防火墙修改： 允许 1434端口 使用 UDP协议 通过防火墙(Sql Server Browser 服务 使用的是 UDP 协议以及默认1434端口)</strong></p>
 </blockquote>
+<p>5、 修改端点URL、其他配置项</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466013346-3.png" alt="img"></p>
+<p>6、 选择数据库同步模式为“仅联接”</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466108993-6.png" alt="img"></p>
+<p>7、 验证可用性组并正式创建</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466124216-9.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466131605-12.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466140833-15.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466149656-18.png" alt="img"></p>
+<p>8、可用性组创建成功后，查看集群各节点数据库的状态</p>
+<p>9、可用性组创建成功后故障转移集群的变化</p>
+<h2 id="五、在主副本中创建侦听器"><a href="#五、在主副本中创建侦听器" class="headerlink" title="五、在主副本中创建侦听器"></a>五、在主副本中创建侦听器</h2><p>1、开始创建</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466252688-21.png" alt="img"></p>
+<p>2、设置侦听器IP及类型</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466302388-27.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466293367-24.png" alt="img"></p>
+<p>3、 侦听器创建成功</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466637078-48.png" alt="img"></p>
+<p>4、侦听器创建成功后DNS增加了侦听器域名及IP地址的解析项</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466645970-51.png" alt="img"></p>
+<p>5、 AD中Computers增加了侦听器</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466654428-54.png" alt="img"></p>
+<p>6、 故障转移集群中可用性组的变化</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466661957-57.png" alt="img"></p>
+<p>7、查看当前主副本在哪台服务器上</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466672311-60.png" alt="img"></p>
+<h2 id="六、手动故障转移"><a href="#六、手动故障转移" class="headerlink" title="六、手动故障转移"></a>六、手动故障转移</h2><p>1、开始执行手动故障转移</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466520719-30.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466531791-33.png" alt="img"></p>
+<p>2、 选择新主副本</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466546501-36.png" alt="img"></p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466556593-39.png" alt="img"></p>
+<p>4、 在可用性组主副本中查看各节点的连接情况及可读性</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466574427-42.png" alt="img"></p>
+<p>5、 用脚本修改主副本、辅助副本的可读性</p>
+<p><img src="/2023/05/07/blog4/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW91bmNsZQ==,size_16,color_FFFFFF,t_70-1686466607726-45.png" alt="img"></p>
 
       
     </div>
